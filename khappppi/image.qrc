@@ -1,0 +1,18 @@
+<RCC>
+  <qresource>
+    <file>images/introimage.png</file>
+    <file>icons/introimage.png</file>
+    <file>icons/LinkedlistINTRO.png</file>
+    <file>icons/Queueintro.png</file>
+    <file>icons/stackITRO.png</file>
+  </qresource>
+  <qresource prefix="newPrefix">
+    <file>images/LinkedlistINTRO.png</file>
+  </qresource>
+  <qresource prefix="newPrefix">
+    <file>images/stackITRO.png</file>
+  </qresource>
+  <qresource prefix="newPrefix">
+    <file>images/Queueintro.png</file>
+  </qresource>
+</RCC>
