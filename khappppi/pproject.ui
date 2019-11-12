@@ -9,8 +9,8 @@
    <rect>
     <x>0</x>
     <y>0</y>
-    <width>1271</width>
-    <height>705</height>
+    <width>1065</width>
+    <height>711</height>
    </rect>
   </property>
   <property name="windowTitle">
@@ -142,7 +142,7 @@
      </rect>
     </property>
     <property name="currentIndex">
-     <number>0</number>
+     <number>4</number>
     </property>
     <widget class="QWidget" name="tabiyat">
      <attribute name="title">
@@ -205,7 +205,7 @@ p, li { white-space: pre-wrap; }
        </rect>
       </property>
       <property name="currentIndex">
-       <number>0</number>
+       <number>1</number>
       </property>
       <widget class="QWidget" name="tab_6">
        <attribute name="title">
@@ -326,10 +326,23 @@ p, li { white-space: pre-wrap; }
           <x>70</x>
           <y>0</y>
           <width>121</width>
-          <height>343</height>
+          <height>430</height>
          </rect>
         </property>
         <layout class="QVBoxLayout" name="verticalLayout">
+         <property name="spacing">
+          <number>7</number>
+         </property>
+         <item>
+          <widget class="QLineEdit" name="lineEdit_31">
+           <property name="text">
+            <string>66</string>
+           </property>
+           <property name="readOnly">
+            <bool>true</bool>
+           </property>
+          </widget>
+         </item>
          <item>
           <widget class="QLineEdit" name="lineEdit_27">
            <property name="readOnly">
@@ -412,6 +425,13 @@ p, li { white-space: pre-wrap; }
          </item>
          <item>
           <widget class="QLineEdit" name="lineEdit_25">
+           <property name="readOnly">
+            <bool>true</bool>
+           </property>
+          </widget>
+         </item>
+         <item>
+          <widget class="QLineEdit" name="lineEdit_30">
            <property name="readOnly">
             <bool>true</bool>
            </property>
@@ -528,7 +548,7 @@ p, li { white-space: pre-wrap; }
        </rect>
       </property>
       <property name="currentIndex">
-       <number>0</number>
+       <number>5</number>
       </property>
       <widget class="QWidget" name="tab_15">
        <attribute name="title">
@@ -2061,7 +2081,7 @@ p, li { white-space: pre-wrap; }
         <rect>
          <x>20</x>
          <y>340</y>
-         <width>111</width>
+         <width>131</width>
          <height>20</height>
         </rect>
        </property>
@@ -2109,13 +2129,26 @@ p, li { white-space: pre-wrap; }
        <property name="geometry">
         <rect>
          <x>124</x>
-         <y>430</y>
+         <y>460</y>
          <width>181</width>
          <height>51</height>
         </rect>
        </property>
        <property name="text">
         <string>ADD USER</string>
+       </property>
+      </widget>
+      <widget class="QLabel" name="label_6">
+       <property name="geometry">
+        <rect>
+         <x>134</x>
+         <y>409</y>
+         <width>231</width>
+         <height>21</height>
+        </rect>
+       </property>
+       <property name="text">
+        <string/>
        </property>
       </widget>
      </widget>
@@ -2125,11 +2158,11 @@ p, li { white-space: pre-wrap; }
         <x>560</x>
         <y>0</y>
         <width>501</width>
-        <height>531</height>
+        <height>201</height>
        </rect>
       </property>
       <property name="title">
-       <string>EDIT USER</string>
+       <string>LOGIN</string>
       </property>
       <widget class="QLabel" name="label_9">
        <property name="geometry">
@@ -2357,45 +2390,6 @@ p, li { white-space: pre-wrap; }
         <string>PASSWORD</string>
        </property>
       </widget>
-      <widget class="QLineEdit" name="lineEdit_17">
-       <property name="geometry">
-        <rect>
-         <x>260</x>
-         <y>400</y>
-         <width>171</width>
-         <height>41</height>
-        </rect>
-       </property>
-       <property name="echoMode">
-        <enum>QLineEdit::Password</enum>
-       </property>
-      </widget>
-      <widget class="QLabel" name="label_12">
-       <property name="geometry">
-        <rect>
-         <x>50</x>
-         <y>410</y>
-         <width>111</width>
-         <height>20</height>
-        </rect>
-       </property>
-       <property name="text">
-        <string>CONFIRM PASSWORD</string>
-       </property>
-      </widget>
-      <widget class="QLabel" name="label_17">
-       <property name="geometry">
-        <rect>
-         <x>50</x>
-         <y>230</y>
-         <width>101</width>
-         <height>20</height>
-        </rect>
-       </property>
-       <property name="text">
-        <string>USER NAME</string>
-       </property>
-      </widget>
       <widget class="QPushButton" name="pushButton_16">
        <property name="geometry">
         <rect>
@@ -2409,47 +2403,40 @@ p, li { white-space: pre-wrap; }
         <string>ADD USER</string>
        </property>
       </widget>
-      <widget class="QLineEdit" name="lineEdit_18">
+     </widget>
+     <widget class="QGroupBox" name="groupBox_4">
+      <property name="enabled">
+       <bool>false</bool>
+      </property>
+      <property name="geometry">
+       <rect>
+        <x>560</x>
+        <y>210</y>
+        <width>501</width>
+        <height>321</height>
+       </rect>
+      </property>
+      <property name="title">
+       <string>EDIT USER</string>
+      </property>
+      <widget class="QLabel" name="label_12">
        <property name="geometry">
         <rect>
-         <x>260</x>
-         <y>340</y>
-         <width>171</width>
-         <height>41</height>
+         <x>10</x>
+         <y>221</y>
+         <width>111</width>
+         <height>20</height>
         </rect>
        </property>
-       <property name="echoMode">
-        <enum>QLineEdit::Password</enum>
+       <property name="text">
+        <string>CONFIRM PASSWORD</string>
        </property>
       </widget>
       <widget class="QLineEdit" name="lineEdit_19">
        <property name="geometry">
         <rect>
-         <x>260</x>
-         <y>280</y>
-         <width>171</width>
-         <height>41</height>
-        </rect>
-       </property>
-      </widget>
-      <widget class="QLabel" name="label_18">
-       <property name="geometry">
-        <rect>
-         <x>50</x>
-         <y>290</y>
-         <width>101</width>
-         <height>20</height>
-        </rect>
-       </property>
-       <property name="text">
-        <string>EMAIL ADDRESS</string>
-       </property>
-      </widget>
-      <widget class="QLineEdit" name="lineEdit_20">
-       <property name="geometry">
-        <rect>
-         <x>260</x>
-         <y>219</y>
+         <x>220</x>
+         <y>91</y>
          <width>171</width>
          <height>41</height>
         </rect>
@@ -2458,8 +2445,8 @@ p, li { white-space: pre-wrap; }
       <widget class="QLabel" name="label_19">
        <property name="geometry">
         <rect>
-         <x>50</x>
-         <y>360</y>
+         <x>10</x>
+         <y>171</y>
          <width>101</width>
          <height>20</height>
         </rect>
@@ -2468,17 +2455,79 @@ p, li { white-space: pre-wrap; }
         <string>PASSWORD</string>
        </property>
       </widget>
+      <widget class="QLineEdit" name="lineEdit_17">
+       <property name="geometry">
+        <rect>
+         <x>220</x>
+         <y>211</y>
+         <width>171</width>
+         <height>41</height>
+        </rect>
+       </property>
+       <property name="echoMode">
+        <enum>QLineEdit::Password</enum>
+       </property>
+      </widget>
+      <widget class="QLabel" name="label_18">
+       <property name="geometry">
+        <rect>
+         <x>10</x>
+         <y>101</y>
+         <width>101</width>
+         <height>20</height>
+        </rect>
+       </property>
+       <property name="text">
+        <string>EMAIL ADDRESS</string>
+       </property>
+      </widget>
+      <widget class="QLabel" name="label_17">
+       <property name="geometry">
+        <rect>
+         <x>10</x>
+         <y>41</y>
+         <width>101</width>
+         <height>20</height>
+        </rect>
+       </property>
+       <property name="text">
+        <string>USER NAME</string>
+       </property>
+      </widget>
       <widget class="QPushButton" name="pushButton_17">
        <property name="geometry">
         <rect>
-         <x>150</x>
-         <y>460</y>
+         <x>110</x>
+         <y>271</y>
          <width>181</width>
          <height>51</height>
         </rect>
        </property>
        <property name="text">
         <string>EDIT USER DATA</string>
+       </property>
+      </widget>
+      <widget class="QLineEdit" name="lineEdit_18">
+       <property name="geometry">
+        <rect>
+         <x>220</x>
+         <y>151</y>
+         <width>171</width>
+         <height>41</height>
+        </rect>
+       </property>
+       <property name="echoMode">
+        <enum>QLineEdit::Password</enum>
+       </property>
+      </widget>
+      <widget class="QLineEdit" name="lineEdit_20">
+       <property name="geometry">
+        <rect>
+         <x>220</x>
+         <y>30</y>
+         <width>171</width>
+         <height>41</height>
+        </rect>
        </property>
       </widget>
      </widget>
@@ -2510,7 +2559,7 @@ p, li { white-space: pre-wrap; }
     <rect>
      <x>0</x>
      <y>0</y>
-     <width>1271</width>
+     <width>1065</width>
      <height>26</height>
     </rect>
    </property>
