@@ -27,7 +27,7 @@
      </rect>
     </property>
     <property name="text">
-     <string>Push</string>
+     <string>Enqueue</string>
     </property>
    </widget>
    <widget class="QLineEdit" name="pushEdit">
@@ -56,7 +56,7 @@
      </rect>
     </property>
     <property name="text">
-     <string>Pop</string>
+     <string>Dequeue</string>
     </property>
    </widget>
    <widget class="QLineEdit" name="popEdit">
@@ -104,7 +104,7 @@
      </rect>
     </property>
     <property name="text">
-     <string>Top</string>
+     <string>Front</string>
     </property>
    </widget>
    <widget class="QLabel" name="label">

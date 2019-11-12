@@ -4,7 +4,8 @@ import sys
 
 from PyQt5.uic import loadUiType
 
-ui, _ = loadUiType('panga.ui')
+ui, _ = loadUiType('queue.ui')
+
 
 # global ww, i, s, x, y, p
 # i = 0
@@ -18,8 +19,8 @@ class MainApp(QMainWindow, ui):
         QMainWindow.__init__(self)
         self.setupUi(self)
         self.ww = []
-        self.ll = []
         self.i = -1
+        self.r = 0
         self.x, self.y, self.p = 490, 440, 21
         self.s = "gLineEdit"
         self.sz = 21
@@ -35,8 +36,8 @@ class MainApp(QMainWindow, ui):
     def size(self):
         # self.sz = int(self.sizeEdit.text())
         # self.popEdit.setText("9")
-        self.sizeEdit.setReadOnly(True)
         self.pushButton.setEnabled(True)
+        self.sizeEdit.setReadOnly(True)
         self.popButton.setEnabled(True)
         self.topButton.setEnabled(True)
         self.sizeButton.setEnabled(False)
@@ -48,20 +49,18 @@ class MainApp(QMainWindow, ui):
         data = self.pushEdit.text().strip()
 
         if self.i == self.sz:
-            self.label.setText("Stack is Full")
+            self.label.setText("Queue is Full")
         elif data == "":
             self.label.setText("Please Enter a Valid Entry")
         else:
             self.i += 1
             # self.lineEdit_2.setText(str(ww.pop()))
-
             label_2 = QtWidgets.QLabel(self.centralwidget)
-            label_2.setGeometry(QtCore.QRect(self.x - 20, self.y, 21, 20))
+            label_2.setGeometry(QtCore.QRect(self.x-20, self.y, 21, 20))
             label_2.setAlignment(QtCore.Qt.AlignCenter)
             label_2.setObjectName("label_2")
             label_2.setText(str(self.i))
             label_2.show()
-            self.ll.append(label_2)
 
             line_editt = QtWidgets.QLineEdit(self.centralwidget)
             line_editt.setGeometry(QtCore.QRect(self.x, self.y, 113, 20))
@@ -78,30 +77,29 @@ class MainApp(QMainWindow, ui):
         self.pushEdit.setText("")
         self.label.setText("")
 
-        if self.i == -1:
-            self.label.setText("Stack is Empty")
+        if self.r == self.sz + 1:
+            self.label.setText("Queue is Empty")
         else:
-            z = self.ww.pop()
+            z = self.ww[self.r]
+            self.r += 1
             self.popEdit.setText(z.text())
-            z.hide()
-            z.deleteLater()
+            z.setText("")
 
-            z = self.ll.pop()
-            z.hide()
-            z.deleteLater()
-
-            self.i -= 1
-            self.y += self.p
+            # z = self.ww.pop()
+            # z.hide()
+            # z.deleteLater()
+            # self.i -= 1
+            # self.y += self.p
 
     def top(self):
         self.pushEdit.setText("")
         self.popEdit.setText("")
         self.label.setText("")
 
-        if self.i == -1:
-            self.label.setText("Stack is Empty")
+        if self.r == self.sz + 1:
+            self.label.setText("Queue is Empty")
         else:
-            self.topEdit.setText(self.ww[self.i].text())
+            self.topEdit.setText(self.ww[self.r].text())
 
 
 def main():
