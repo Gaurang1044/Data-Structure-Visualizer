@@ -18,6 +18,7 @@ class MainApp(QMainWindow, ui):
         QMainWindow.__init__(self)
         self.setupUi(self)
         self.ww = []
+        self.ll = []
         self.i = -1
         self.x, self.y, self.p = 490, 440, 21
         self.s = "gLineEdit"
@@ -34,6 +35,7 @@ class MainApp(QMainWindow, ui):
     def size(self):
         # self.sz = int(self.sizeEdit.text())
         # self.popEdit.setText("9")
+        self.sizeEdit.setReadOnly(True)
         self.pushButton.setEnabled(True)
         self.popButton.setEnabled(True)
         self.topButton.setEnabled(True)
@@ -52,6 +54,14 @@ class MainApp(QMainWindow, ui):
         else:
             self.i += 1
             # self.lineEdit_2.setText(str(ww.pop()))
+
+            label_2 = QtWidgets.QLabel(self.centralwidget)
+            label_2.setGeometry(QtCore.QRect(self.x - 20, self.y, 21, 20))
+            label_2.setAlignment(QtCore.Qt.AlignCenter)
+            label_2.setObjectName("label_2")
+            label_2.setText(str(self.i))
+            label_2.show()
+            self.ll.append(label_2)
 
             line_editt = QtWidgets.QLineEdit(self.centralwidget)
             line_editt.setGeometry(QtCore.QRect(self.x, self.y, 113, 20))
@@ -75,6 +85,11 @@ class MainApp(QMainWindow, ui):
             self.popEdit.setText(z.text())
             z.hide()
             z.deleteLater()
+
+            z = self.ll.pop()
+            z.hide()
+            z.deleteLater()
+
             self.i -= 1
             self.y += self.p
 
