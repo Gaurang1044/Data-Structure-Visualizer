@@ -34,9 +34,28 @@ class MainApp(QMainWindow, ui):
         self.sizeButton.clicked.connect(self.size)
 
     def size(self):
+
+        bl = False
+
+        try:
+            self.sz = int(self.sizeEdit.text())
+            if self.sz > 22:
+                bl = True
+        except BaseException as e:
+            bl = True
+
+        if bl:
+            self.label.setText('''Wrong Size Entered.
+Size set to Default(22)''')
+            self.sz = 21
+
+        else:
+            self.sz -= 1
+
         # self.sz = int(self.sizeEdit.text())
         # self.popEdit.setText("9")
         self.pushButton.setEnabled(True)
+        self.sizeEdit.setText(str(self.sz+1))
         self.sizeEdit.setReadOnly(True)
         self.popButton.setEnabled(True)
         self.topButton.setEnabled(True)

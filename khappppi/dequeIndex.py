@@ -49,12 +49,13 @@ class MainApp(QMainWindow, ui):
             line_editt.hide()
             self.ww.append(line_editt)
             self.y = self.y - self.p
+            self.size()
 
     def handle_buttons(self):
         self.pushButton_2.clicked.connect(self.push_2)
         self.popButton_2.clicked.connect(self.pop_2)
         self.topButton_2.clicked.connect(self.top_2)
-        self.sizeButton.clicked.connect(self.size)
+        # self.sizeButton.clicked.connect(self.size)
 
         self.popButton.clicked.connect(self.pop)
         self.topButton.clicked.connect(self.top)
@@ -64,12 +65,14 @@ class MainApp(QMainWindow, ui):
         # self.sz = int(self.sizeEdit.text())
         # self.popEdit.setText("9")
         self.sizeEdit.setReadOnly(True)
+        self.sizeEdit.setText("22")
         self.pushButton.setEnabled(True)
         self.popButton.setEnabled(True)
         self.topButton.setEnabled(True)
         self.pushButton_2.setEnabled(True)
         self.popButton_2.setEnabled(True)
         self.topButton_2.setEnabled(True)
+
         self.sizeButton.setEnabled(False)
 
         self.dec()

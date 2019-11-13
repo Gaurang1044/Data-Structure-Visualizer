@@ -54,16 +54,18 @@ class MainApp(QMainWindow, ui):
         self.pushButton_2.clicked.connect(self.push_2)
         self.popButton_2.clicked.connect(self.pop_2)
         self.topButton_2.clicked.connect(self.top_2)
-        self.sizeButton.clicked.connect(self.size)
+        # self.sizeButton.clicked.connect(self.size)
 
         self.popButton.clicked.connect(self.pop)
         self.topButton.clicked.connect(self.top)
         self.pushButton.clicked.connect(self.push)
+        self.size()
 
     def size(self):
         # self.sz = int(self.sizeEdit.text())
         # self.popEdit.setText("9")
         self.sizeEdit.setReadOnly(True)
+        self.sizeEdit.setText("22")
         self.pushButton.setEnabled(True)
         self.popButton.setEnabled(True)
         self.topButton.setEnabled(True)

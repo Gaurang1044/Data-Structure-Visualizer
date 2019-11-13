@@ -1319,7 +1319,7 @@
      </rect>
     </property>
     <property name="text">
-     <string>3</string>
+     <string>13</string>
     </property>
     <property name="alignment">
      <set>Qt::AlignCenter</set>
@@ -1335,7 +1335,7 @@
      </rect>
     </property>
     <property name="text">
-     <string>1</string>
+     <string>11</string>
     </property>
     <property name="alignment">
      <set>Qt::AlignCenter</set>
@@ -1367,7 +1367,7 @@
      </rect>
     </property>
     <property name="text">
-     <string>2</string>
+     <string>12</string>
     </property>
     <property name="alignment">
      <set>Qt::AlignCenter</set>
@@ -1383,7 +1383,7 @@
      </rect>
     </property>
     <property name="text">
-     <string>4</string>
+     <string>14</string>
     </property>
     <property name="alignment">
      <set>Qt::AlignCenter</set>
