@@ -4,7 +4,7 @@ import sys
 
 from PyQt5.uic import loadUiType
 
-ui, _ = loadUiType('deque.ui')
+ui, _ = loadUiType('circQueue.ui')
 
 
 # global ww, i, s, x, y, p
@@ -52,23 +52,23 @@ class MainApp(QMainWindow, ui):
 
     def handle_buttons(self):
         self.pushButton_2.clicked.connect(self.push_2)
-        self.popButton_2.clicked.connect(self.pop_2)
+        # self.popButton_2.clicked.connect(self.pop_2)
         self.topButton_2.clicked.connect(self.top_2)
         self.sizeButton.clicked.connect(self.size)
 
         self.popButton.clicked.connect(self.pop)
         self.topButton.clicked.connect(self.top)
-        self.pushButton.clicked.connect(self.push)
+        # self.pushButton.clicked.connect(self.push)
 
     def size(self):
         # self.sz = int(self.sizeEdit.text())
         # self.popEdit.setText("9")
         self.sizeEdit.setReadOnly(True)
-        self.pushButton.setEnabled(True)
+        # self.pushButton.setEnabled(True)
         self.popButton.setEnabled(True)
         self.topButton.setEnabled(True)
         self.pushButton_2.setEnabled(True)
-        self.popButton_2.setEnabled(True)
+        # self.popButton_2.setEnabled(True)
         self.topButton_2.setEnabled(True)
         self.sizeButton.setEnabled(False)
 
@@ -76,24 +76,26 @@ class MainApp(QMainWindow, ui):
 
     def push(self):
         self.topEdit_2.setText("")
-        self.popEdit_2.setText("")
+        # self.popEdit_2.setText("")
         self.pushEdit_2.setText("")
         self.topEdit.setText("")
         self.label.setText("")
         self.popEdit.setText("")
 
         data = self.pushEdit.text().strip()
-        if self.r == 0:
+        if (self.i == self.sz and self.r == 0) or (self.r == self.i + 1):
             self.label.setText("Deque is Full")
         elif data == "":
             self.label.setText("Please Enter a Valid Entry")
         else:
             if self.r == -1:
-                self.r = 11
-                self.i = 11
+                self.r = 0
+                self.i = 0
             else:
-                self.r -= 1
-
+                if self.r == 0:
+                    self.r = self.sz
+                else:
+                    self.r -= 1
             self.ww[self.r].show()
             self.ww[self.r].setText(data)
             self.ll[self.r].show()
@@ -102,24 +104,27 @@ class MainApp(QMainWindow, ui):
 
     def push_2(self):
         self.topEdit_2.setText("")
-        self.popEdit_2.setText("")
-        self.pushEdit.setText("")
+        # self.popEdit_2.setText("")
+        # self.pushEdit.setText("")
         self.topEdit.setText("")
         self.label.setText("")
         self.popEdit.setText("")
 
         data = self.pushEdit_2.text().strip()
 
-        if self.i == self.sz:
-            self.label.setText("Deque is Full")
+        if (self.i == self.sz and self.r == 0) or (self.r == self.i + 1):
+            self.label.setText("Stack is Full")
         elif data == "":
             self.label.setText("Please Enter a Valid Entry")
         else:
             if self.r == -1:
-                self.r = 11
-                self.i = 11
+                self.r = 0
+                self.i = 0
             else:
-                self.i += 1
+                if self.i == self.sz:
+                    self.i = 0
+                else:
+                    self.i += 1
 
             self.ww[self.i].show()
             self.ww[self.i].setText(data)
@@ -131,8 +136,8 @@ class MainApp(QMainWindow, ui):
         self.topEdit_2.setText("")
         self.pushEdit_2.setText("")
         self.topEdit.setText("")
-        self.pushEdit.setText("")
-        self.popEdit_2.setText("")
+        # self.pushEdit.setText("")
+        # self.popEdit_2.setText("")
         self.label.setText("")
 
         if self.r == -1:
@@ -148,7 +153,10 @@ class MainApp(QMainWindow, ui):
                 self.i = -1
                 self.r = -1
             else:
-                self.r += 1
+                if self.r == self.sz:
+                    self.r = 0
+                else:
+                    self.r += 1
 
         self.dec()
 
@@ -156,7 +164,7 @@ class MainApp(QMainWindow, ui):
         self.topEdit_2.setText("")
         self.pushEdit_2.setText("")
         self.topEdit.setText("")
-        self.pushEdit.setText("")
+        # self.pushEdit.setText("")
         self.popEdit.setText("")
         self.label.setText("")
 
@@ -173,19 +181,22 @@ class MainApp(QMainWindow, ui):
                 self.i = -1
                 self.r = -1
             else:
-                self.i -= 1
+                if self.i == 0:
+                    self.i = self.sz
+                else:
+                    self.i -= 1
 
         self.dec()
 
     def top(self):
-        self.pushEdit.setText("")
+        # self.pushEdit.setText("")
         self.popEdit.setText("")
         self.topEdit_2.setText("")
         self.pushEdit_2.setText("")
-        self.popEdit_2.setText("")
+        # self.popEdit_2.setText("")
         self.label.setText("")
 
-        if self.r == -1:
+        if self.i == -1:
             self.label.setText("Deque is Empty")
         else:
             self.topEdit.setText(self.ww[self.r].text())
@@ -193,11 +204,11 @@ class MainApp(QMainWindow, ui):
         self.dec()
 
     def top_2(self):
-        self.pushEdit.setText("")
+        # self.pushEdit.setText("")
         self.popEdit.setText("")
         self.topEdit.setText("")
         self.pushEdit_2.setText("")
-        self.popEdit_2.setText("")
+        # self.popEdit_2.setText("")
         self.label.setText("")
 
         if self.i == -1:
