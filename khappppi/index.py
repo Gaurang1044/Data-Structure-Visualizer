@@ -60,6 +60,39 @@ class MainApp(QMainWindow, ui):
         self.pushButton_12.clicked.connect(self.Add_New_User)
         self.pushButton_13.clicked.connect(self.Login_user)
         self.pushButton_17.clicked.connect(self.Edit_User)
+#######################################################################################
+        self.pushButton.clicked.connect(self.open_linklist_tab)
+        self.pushButton_3.clicked.connect(self.open_stack_tab)
+        self.pushButton_2.clicked.connect(self.open_queue_tab)
+
+        self.pushButton_37.clicked.connect(self.back_main_topic_tab)
+        self.pushButton_21.clicked.connect(self.back_main_topic_tab)
+        self.pushButton_38.clicked.connect(self.back_main_topic_tab)
+###########################################################################################
+        self.pushButton_18.clicked.connect(self.open_linklist_code_tab)
+        self.pushButton_19.clicked.connect(self.open_stack_code_tab)
+        self.pushButton_20.clicked.connect(self.open_queue_code_tab)
+
+        self.pushButton_36.clicked.connect(self.back_main_tab)
+        self.pushButton_35.clicked.connect(self.back_main_tab)
+        self.pushButton_34.clicked.connect(self.back_main_tab)
+        self.pushButton_33.clicked.connect(self.back_main_tab)
+        self.pushButton_32.clicked.connect(self.back_main_tab)
+#############################################################################################
+        self.pushButton_4.clicked.connect(self.open_linklist_quiz_tab)
+        self.pushButton_5.clicked.connect(self.open_stack_quiz_tab)
+        self.pushButton_9.clicked.connect(self.open_queue_quiz_tab)
+
+        self.pushButton_40.clicked.connect(self.next_linklist_quiz_tab)
+        self.pushButton_44.clicked.connect(self.next_stack_quiz_tab)
+        self.pushButton_48.clicked.connect(self.next_queue_quiz_tab)
+
+        self.pushButton_39.clicked.connect(self.back_main_quiz_tab)
+        self.pushButton_43.clicked.connect(self.back_main_quiz_tab)
+        self.pushButton_47.clicked.connect(self.back_main_quiz_tab)
+        self.pushButton_41.clicked.connect(self.back_linklist_quiz_tab)
+        self.pushButton_45.clicked.connect(self.back_stack_quiz_tab)
+        self.pushButton_49.clicked.connect(self.back_queue_quiz_tab)
 
     #########################################################################
     ####################open_tabs############################################
@@ -69,18 +102,91 @@ class MainApp(QMainWindow, ui):
 
     def open_topics_tab(self):
         self.outertabWidget.setCurrentIndex(1)
+        self.tabWidget_2.setCurrentIndex(0)
 
     def open_codes_tab(self):
         self.outertabWidget.setCurrentIndex(2)
+        self.tabWidget_3.setCurrentIndex(0)
 
     def open_quiz_tab(self):
         self.outertabWidget.setCurrentIndex(3)
+        self.tabWidget.setCurrentIndex(0)
 
     def open_login_tab(self):
         self.outertabWidget.setCurrentIndex(4)
 
-    ###############################################################
-    ############database_users#####################################
+############################################################################
+################open_back_code_tabs#########################################
+
+    def open_linklist_tab(self):
+        self.tabWidget_3.setCurrentIndex(1)
+
+    def open_stack_tab(self):
+        self.tabWidget_3.setCurrentIndex(2)
+
+    def open_queue_tab(self):
+        self.tabWidget_3.setCurrentIndex(3)
+
+    def back_main_topic_tab(self):
+        self.tabWidget_3.setCurrentIndex(0)
+
+############################################################################
+################open_back_topics_tabs########################################
+
+    def open_linklist_code_tab(self):
+        self.tabWidget_2.setCurrentIndex(1)
+
+    def open_stack_code_tab(self):
+        self.tabWidget_2.setCurrentIndex(4)
+
+    def open_queue_code_tab(self):
+        x= self.comboBox_3.currentText()
+        if x == "SINGLE QUEUE":
+            self.tabWidget_2.setCurrentIndex(2)
+
+        elif x == "DOUBLE QUEUE":
+            self.tabWidget_2.setCurrentIndex(3)
+
+        elif x == "CIRCULAR QUEUE":
+            self.tabWidget_2.setCurrentIndex(5)
+
+    def back_main_tab(self):
+        self.tabWidget_2.setCurrentIndex(0)
+
+############################################################################
+################open_back_next_quiz_tabs####################################
+
+    def open_linklist_quiz_tab(self):
+        self.tabWidget.setCurrentIndex(1)
+
+    def open_stack_quiz_tab(self):
+        self.tabWidget.setCurrentIndex(3)
+
+    def open_queue_quiz_tab(self):
+        self.tabWidget.setCurrentIndex(5)
+
+
+    def next_linklist_quiz_tab(self):
+        self.tabWidget.setCurrentIndex(2)
+
+    def next_stack_quiz_tab(self):
+        self.tabWidget.setCurrentIndex(4)
+
+    def next_queue_quiz_tab(self):
+        self.tabWidget.setCurrentIndex(6)
+
+
+    def back_main_quiz_tab(self):
+        self.tabWidget.setCurrentIndex(0)
+    def back_linklist_quiz_tab(self):
+        self.tabWidget.setCurrentIndex(1)
+    def back_stack_quiz_tab(self):
+        self.tabWidget.setCurrentIndex(3)
+    def back_queue_quiz_tab(self):
+        self.tabWidget.setCurrentIndex(5)
+
+##########################################################################
+###############database_users#############################################
 
     def Add_New_User(self):
         self.db = MySQLdb.connect(host='localhost', user='root', password='hello@123#ty', db='visual_structures')
