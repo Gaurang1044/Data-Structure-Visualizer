@@ -6,6 +6,7 @@ from PyQt5.uic import loadUiType
 
 ui, _ = loadUiType('panga.ui')
 
+
 # global ww, i, s, x, y, p
 # i = 0
 # x, y, p = 490, 360, 30
@@ -31,6 +32,10 @@ class MainApp(QMainWindow, ui):
         self.popButton.clicked.connect(self.pop)
         self.topButton.clicked.connect(self.top)
         self.sizeButton.clicked.connect(self.size)
+        self.clearButton.clicked.connect(self.clear)
+
+    def clear(self):
+        pass
 
     def size(self):
 
@@ -53,10 +58,9 @@ Size set to Default(22)''')
         self.sizeEdit.setReadOnly(True)
         self.pushButton.setEnabled(True)
         self.popButton.setEnabled(True)
-        self.sizeEdit.setText(str(self.sz+1))
+        self.sizeEdit.setText(str(self.sz + 1))
         self.topButton.setEnabled(True)
         self.sizeButton.setEnabled(False)
-
 
     def push(self):
         self.topEdit.setText("")

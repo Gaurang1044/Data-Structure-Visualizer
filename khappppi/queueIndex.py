@@ -32,6 +32,10 @@ class MainApp(QMainWindow, ui):
         self.popButton.clicked.connect(self.pop)
         self.topButton.clicked.connect(self.top)
         self.sizeButton.clicked.connect(self.size)
+        self.clearButton.clicked.connect(self.clear)
+
+    def clear(self):
+        pass
 
     def size(self):
 

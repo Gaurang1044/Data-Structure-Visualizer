@@ -28,6 +28,7 @@ class MainApp(QMainWindow, ui):
 
         self.set_boxes()
         self.handle_buttons()
+        self.size()
 
     def set_boxes(self):
 
@@ -59,7 +60,10 @@ class MainApp(QMainWindow, ui):
         self.popButton.clicked.connect(self.pop)
         self.topButton.clicked.connect(self.top)
         self.pushButton.clicked.connect(self.push)
-        self.size()
+        self.clearButton.clicked.connect(self.clear)
+
+    def clear(self):
+        pass
 
     def size(self):
         # self.sz = int(self.sizeEdit.text())
