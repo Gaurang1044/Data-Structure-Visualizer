@@ -6,8 +6,8 @@
    <rect>
     <x>0</x>
     <y>0</y>
-    <width>640</width>
-    <height>480</height>
+    <width>654</width>
+    <height>506</height>
    </rect>
   </property>
   <property name="windowTitle">
@@ -129,19 +129,6 @@
      <bool>false</bool>
     </property>
    </widget>
-   <widget class="QPushButton" name="pushButton_2">
-    <property name="geometry">
-     <rect>
-      <x>100</x>
-      <y>320</y>
-      <width>75</width>
-      <height>23</height>
-     </rect>
-    </property>
-    <property name="text">
-     <string>Clear</string>
-    </property>
-   </widget>
    <widget class="QLineEdit" name="sizeEdit">
     <property name="enabled">
      <bool>true</bool>
@@ -183,8 +170,8 @@
     <rect>
      <x>0</x>
      <y>0</y>
-     <width>640</width>
-     <height>21</height>
+     <width>654</width>
+     <height>26</height>
     </rect>
    </property>
   </widget>

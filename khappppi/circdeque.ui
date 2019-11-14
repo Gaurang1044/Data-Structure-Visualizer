@@ -22,7 +22,7 @@
      <rect>
       <x>163</x>
       <y>201</y>
-      <width>75</width>
+      <width>91</width>
       <height>23</height>
      </rect>
     </property>
@@ -51,7 +51,7 @@
      <rect>
       <x>163</x>
       <y>251</y>
-      <width>75</width>
+      <width>91</width>
       <height>23</height>
      </rect>
     </property>
@@ -99,7 +99,7 @@
      <rect>
       <x>163</x>
       <y>301</y>
-      <width>75</width>
+      <width>91</width>
       <height>23</height>
      </rect>
     </property>
@@ -121,19 +121,6 @@
     </property>
     <property name="alignment">
      <set>Qt::AlignCenter</set>
-    </property>
-   </widget>
-   <widget class="QPushButton" name="clearButton">
-    <property name="geometry">
-     <rect>
-      <x>90</x>
-      <y>390</y>
-      <width>75</width>
-      <height>23</height>
-     </rect>
-    </property>
-    <property name="text">
-     <string>Clear</string>
     </property>
    </widget>
    <widget class="QLineEdit" name="sizeEdit">
@@ -163,7 +150,7 @@
      <rect>
       <x>160</x>
       <y>10</y>
-      <width>75</width>
+      <width>91</width>
       <height>23</height>
      </rect>
     </property>
@@ -208,7 +195,7 @@
      <rect>
       <x>160</x>
       <y>99</y>
-      <width>75</width>
+      <width>91</width>
       <height>23</height>
      </rect>
     </property>
@@ -240,7 +227,7 @@
      <rect>
       <x>160</x>
       <y>49</y>
-      <width>75</width>
+      <width>91</width>
       <height>23</height>
      </rect>
     </property>
@@ -256,7 +243,7 @@
      <rect>
       <x>160</x>
       <y>147</y>
-      <width>75</width>
+      <width>91</width>
       <height>23</height>
      </rect>
     </property>
@@ -329,7 +316,7 @@
      <x>0</x>
      <y>0</y>
      <width>640</width>
-     <height>21</height>
+     <height>26</height>
     </rect>
    </property>
   </widget>
