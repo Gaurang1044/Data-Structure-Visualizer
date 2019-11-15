@@ -246,10 +246,13 @@ class CircDeque(QMainWindow, circdeque):
         self.popButton.clicked.connect(self.pop)
         self.topButton.clicked.connect(self.top)
         self.pushButton.clicked.connect(self.push)
-        # self.clearButton.clicked.connect(self.clear)
+        self.pushButton_3.clicked.connect(self.clear)
 
-    # def clear(self):
-    #     self.pushButton_8.autoClicked(self.open_queue_visualBox)
+    def clear(self):
+        self.close()
+        self.window7 = CircDeque()
+        self.window7.show()
+        # self.pushButton_8.autoClicked(self.open_queue_visualBox)
 
     def size(self):
         # self.sz = int(self.sizeEdit.text())
@@ -467,10 +470,12 @@ class Deque(QMainWindow, deque):
         self.topButton.clicked.connect(self.top)
         self.pushButton.clicked.connect(self.push)
 
-    #     self.clearButton.clicked.connect(self.clear)
-    #
-    # def clear(self):
-    #     pass
+        self.clearButton.clicked.connect(self.clear)
+
+    def clear(self):
+        self.close()
+        self.window6 = Deque()
+        self.window6.show()
 
     def size(self):
         # self.sz = int(self.sizeEdit.text())
@@ -681,11 +686,12 @@ class CircularQueue(QMainWindow, circqueue):
         self.topButton.clicked.connect(self.top)
         # self.pushButton.clicked.connect(self.push)
 
-    #     self.clearButton.clicked.connect(self.clear)
-    #
-    # def clear(self):
-    #     self.window5 = CircularQueue()
-    #     self.window5.show()
+        self.clearButton.clicked.connect(self.clear)
+
+    def clear(self):
+        self.close()
+        self.window5 = CircularQueue()
+        self.window5.show()
 
     def size(self):
         # self.sz = int(self.sizeEdit.text())
@@ -876,10 +882,13 @@ class Queue(QMainWindow, queue):
         self.topButton.clicked.connect(self.top)
         self.sizeButton.clicked.connect(self.size)
 
-    #     self.clearButton.clicked.connect(self.clear)
-    #
-    # def clear(self):
-    #     pass
+        self.clearButton.clicked.connect(self.clear)
+
+    def clear(self):
+        self.close()
+        self.window4 = Queue()
+        self.window4.show()
+
 
     def size(self):
 
@@ -989,10 +998,12 @@ class Stack(QMainWindow, stack):
         self.topButton.clicked.connect(self.top)
         self.sizeButton.clicked.connect(self.size)
 
-    #     self.pushButton_2.clicked.connect(self.clear)
-    #
-    # def clear(self):
-    #     pass
+        self.clearButton.clicked.connect(self.clear)
+
+    def clear(self):
+        self.close()
+        self.window3 = Stack()
+        self.window3.show()
 
     def size(self):
 
@@ -1356,6 +1367,7 @@ class MainApp(QMainWindow, ui):
     def open_quiz_tab(self):
         self.outertabWidget.setCurrentIndex(3)
         self.tabWidget.setCurrentIndex(0)
+        self.clear_answers()
 
     def open_login_tab(self):
         self.outertabWidget.setCurrentIndex(4)
@@ -1406,33 +1418,43 @@ class MainApp(QMainWindow, ui):
 
     def open_linklist_quiz_tab(self):
         self.tabWidget.setCurrentIndex(1)
+        self.clear_answers()
 
     def open_stack_quiz_tab(self):
         self.tabWidget.setCurrentIndex(3)
+        self.clear_answers()
 
     def open_queue_quiz_tab(self):
         self.tabWidget.setCurrentIndex(5)
+        self.clear_answers()
 
     def next_linklist_quiz_tab(self):
         self.tabWidget.setCurrentIndex(2)
+        self.clear_answers()
 
     def next_stack_quiz_tab(self):
         self.tabWidget.setCurrentIndex(4)
+        self.clear_answers()
 
     def next_queue_quiz_tab(self):
         self.tabWidget.setCurrentIndex(6)
+        self.clear_answers()
 
     def back_main_quiz_tab(self):
         self.tabWidget.setCurrentIndex(0)
+        self.clear_answers()
 
     def back_linklist_quiz_tab(self):
         self.tabWidget.setCurrentIndex(1)
+        self.clear_answers()
 
     def back_stack_quiz_tab(self):
         self.tabWidget.setCurrentIndex(3)
+        self.clear_answers()
 
     def back_queue_quiz_tab(self):
         self.tabWidget.setCurrentIndex(5)
+        self.clear_answers()
 
     #########################################################################
     #################quiz_answers############################################
@@ -1510,6 +1532,22 @@ class MainApp(QMainWindow, ui):
 
     def quiz_queue_q4_wrong_answers(self):
         self.label_29.setText('WRONG')
+
+###############################fxn to clear answer####################
+    def clear_answers(self):
+
+        self.label_7.setText('')
+        self.label_8.setText('')
+        self.label_20.setText('')
+        self.label_21.setText('')
+        self.label_22.setText('')
+        self.label_23.setText('')
+        self.label_24.setText('')
+        self.label_25.setText('')
+        self.label_26.setText('')
+        self.label_27.setText('')
+        self.label_28.setText('')
+        self.label_29.setText('')
 
     ##########################################################################
     ###############database_users#############################################
@@ -1656,8 +1694,9 @@ class MainApp(QMainWindow, ui):
 
 def main():
     app = QApplication(sys.argv)
-    window = Login()
-    window.show()
+    # window = Login()                                                      #########################
+    window = MainApp()
+    window.show()                                                          #######################
     app.exec_()
 
 
