@@ -208,7 +208,7 @@ class CircDeque(QMainWindow, circdeque):
         self.ll = []
         self.i = -1
         self.r = -1
-        self.x, self.y, self.z, self.p = 490, 440, 440, 21
+        self.x, self.y, self.p = 490, 445, 21
         self.s = "gLineEdit"
         self.sz = 21
 
@@ -431,7 +431,7 @@ class Deque(QMainWindow, deque):
         self.ll = []
         self.i = -1
         self.r = -1
-        self.x, self.y, self.z, self.p = 490, 440, 440, 21
+        self.x, self.y, self.z, self.p = 490, 444, 440, 21
         self.s = "gLineEdit"
         self.sz = 21
 
@@ -647,7 +647,7 @@ class CircularQueue(QMainWindow, circqueue):
         self.ll = []
         self.i = -1
         self.r = -1
-        self.x, self.y, self.z, self.p = 490, 440, 440, 21
+        self.x, self.y, self.p = 490, 445, 21
         self.s = "gLineEdit"
         self.sz = 21
 
@@ -870,7 +870,7 @@ class Queue(QMainWindow, queue):
         self.ww = []
         self.i = -1
         self.r = 0
-        self.x, self.y, self.p = 490, 440, 21
+        self.x, self.y, self.p = 490, 445, 21
         self.s = "gLineEdit"
         self.sz = 21
 
@@ -1376,10 +1376,10 @@ class MainApp(QMainWindow, ui):
     ################open_back_code_tabs#########################################
 
     def open_linklist_tab(self):
-        self.tabWidget_3.setCurrentIndex(1)
+        self.tabWidget_3.setCurrentIndex(2)
 
     def open_stack_tab(self):
-        self.tabWidget_3.setCurrentIndex(2)
+        self.tabWidget_3.setCurrentIndex(1)
 
     def open_queue_tab(self):
         self.tabWidget_3.setCurrentIndex(3)
@@ -1391,24 +1391,24 @@ class MainApp(QMainWindow, ui):
     ################open_back_topics_tabs########################################
 
     def open_linklist_code_tab(self):
-        self.tabWidget_2.setCurrentIndex(1)
+        self.tabWidget_2.setCurrentIndex(6)
 
     def open_stack_code_tab(self):
-        self.tabWidget_2.setCurrentIndex(2)
+        self.tabWidget_2.setCurrentIndex(1)
 
     def open_queue_code_tab(self):
         x = self.comboBox_3.currentText()
         if x == "SINGLE QUEUE":
-            self.tabWidget_2.setCurrentIndex(3)
+            self.tabWidget_2.setCurrentIndex(2)
 
         elif x == "DOUBLE ENDED QUEUE":
-            self.tabWidget_2.setCurrentIndex(4)
+            self.tabWidget_2.setCurrentIndex(3)
 
         elif x == "CIRCULAR QUEUE":
-            self.tabWidget_2.setCurrentIndex(5)
+            self.tabWidget_2.setCurrentIndex(4)
 
         elif x == "CIRCULAR DEQUE":
-            self.tabWidget_2.setCurrentIndex(6)
+            self.tabWidget_2.setCurrentIndex(5)
 
     def back_main_tab(self):
         self.tabWidget_2.setCurrentIndex(0)
@@ -1632,6 +1632,7 @@ class MainApp(QMainWindow, ui):
         else:
             self.statusBar().showMessage("Invalid login details")
 
+
     def Edit_User(self):
 
         self.db = MySQLdb.connect(host='localhost', user='root', password='hello@123#ty', db='visual_structures')
@@ -1694,9 +1695,8 @@ class MainApp(QMainWindow, ui):
 
 def main():
     app = QApplication(sys.argv)
-    # window = Login()                                                      #########################
-    window = MainApp()
-    window.show()                                                          #######################
+    window = Login()
+    window.show()
     app.exec_()
 
 
